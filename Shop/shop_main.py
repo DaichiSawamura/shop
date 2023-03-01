@@ -26,7 +26,6 @@ class Product:
 
     @property
     def name(self):
-        print("getter")
         return self.__name
 
     @name.setter
@@ -42,3 +41,9 @@ class Product:
             return True
         else:
             return False
+
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return f"Product('{self.name}', {self.price}, {self.quantity}"
