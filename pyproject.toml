@@ -9,6 +9,7 @@ packages = [{include = "project_poetry"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.28.2"
+pytest-cov = "^4.0.0"
 
 
 [build-system]
