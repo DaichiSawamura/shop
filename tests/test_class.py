@@ -14,5 +14,3 @@ def test_check_int():
 def test_name():
     phone = Product("Phone", 10000, 3)
     assert phone.name == "Phone"
-
-

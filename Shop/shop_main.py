@@ -42,21 +42,3 @@ class Product:
             return True
         else:
             return False
-
-
-# item = Product('Телефон', 10000, 5)
-# item.name = 'Смартфон'
-# print(item.name)
-# item.name = 'СуперСмартфон'
-# print(item.check_len)
-
-# Product.reader_from_csv()
-# print(len(Product.products))
-# product1 = Product.products[0]
-# print(product1['name'])
-
-# print(Product.check_int(5))
-# print(Product.check_int(5.0))
-# print(Product.check_int(5.5))
-#print(phone.name())
-#print(phone.name)
