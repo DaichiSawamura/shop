@@ -6,7 +6,7 @@ class Product:
     products = []
 
     def __init__(self, name, price, quantity):
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
@@ -25,13 +25,15 @@ class Product:
                 Product.products.append(i)
 
     @property
-    def check_len(self):
-        try:
-            if len(self.name) > 10:
-                raise Exception
-            else:
-                return self.name
-        except Exception:
+    def name(self):
+        print("getter")
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        if len(name) <= 10:
+            self.__name = name
+        else:
             raise Exception('Длина наименования товара превышает 10 символов')
 
     @staticmethod
@@ -42,17 +44,19 @@ class Product:
             return False
 
 
-#item = Product('Телефон', 10000, 5)
+# item = Product('Телефон', 10000, 5)
 # item.name = 'Смартфон'
 # print(item.name)
-#item.name = 'СуперСмартфон'
-#print(item.check_len)
+# item.name = 'СуперСмартфон'
+# print(item.check_len)
 
-Product.reader_from_csv()
-print(len(Product.products))
-product1 = Product.products[0]
-print(product1['name'])
+# Product.reader_from_csv()
+# print(len(Product.products))
+# product1 = Product.products[0]
+# print(product1['name'])
 
-print(Product.check_int(5))
-print(Product.check_int(5.0))
-print(Product.check_int(5.5))
+# print(Product.check_int(5))
+# print(Product.check_int(5.0))
+# print(Product.check_int(5.5))
+#print(phone.name())
+#print(phone.name)
