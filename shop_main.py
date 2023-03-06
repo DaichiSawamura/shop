@@ -46,4 +46,10 @@ class Product:
         return self.name
 
     def __repr__(self):
-        return f"Product('{self.name}', {self.price}, {self.quantity}"
+        return f"Product('{self.name}', {self.price}, {self.quantity})"
+
+    def __add__(self, other):
+        if isinstance(other, Product) is True:
+            return self.quantity + other.quantity
+        else:
+            raise ValueError("Только объекты класа Product")
