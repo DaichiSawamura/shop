@@ -19,12 +19,3 @@ class Phone(Product):
             raise ValueError("Количество физических SIM-карт должно быть целым числом больше нуля")
         else:
             self.__number_of_sim = number
-
-
-phone1 = Phone("iPhone 14", 120_000, 5, 2)
-prod = Product("Телефон", 20000, 3)
-#print(phone1)
-print(repr(phone1))
-# phone1.number_of_sim = 0
-#print(phone1.number_of_sim)
-#print(phone1 + prod)
