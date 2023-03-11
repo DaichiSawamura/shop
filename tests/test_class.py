@@ -1,5 +1,6 @@
 from shop_main import Product
 from phone_class import Phone
+from keyboard_class import Keyboard
 import csv
 import os
 import pytest
@@ -57,3 +58,20 @@ def test_addition():
 def test_repr_phone():
     phone1 = Phone("iPhone 14", 120_000, 5, 2)
     assert repr(phone1) == "Product('iPhone 14', 120000, 5, 2)"
+
+
+def test_keyboard_name():
+    kb = Keyboard('Dark Project KD87A', 9600, 5)
+    assert kb.name == "Dark Project KD87A"
+
+
+def test_keyboard_lang():
+    kb = Keyboard('Dark Project KD87A', 9600, 5)
+    assert kb.language == "EN"
+
+
+def test_keyboard_change_lang():
+    kb = Keyboard('Dark Project KD87A', 9600, 5)
+    assert kb.language == "EN"
+    kb.change_lang()
+    assert kb.language == "RU"
