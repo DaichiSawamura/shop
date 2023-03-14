@@ -8,12 +8,8 @@ class MixinLog:
 
     @property
     def language(self):
-        return self.__language
-
-    @language.setter
-    def language(self, value):
-        if value == "EN" or value == "RU":
-            self.__language = value
+        if self.__language == "EN" or self.__language == "RU":
+            return self.__language
         else:
             raise AttributeError("property 'language' of 'KeyBoard' object has no setter")
 
