@@ -1,4 +1,5 @@
 import csv
+from CSVError import InstantiateCSVError
 
 
 class Product:
@@ -19,10 +20,18 @@ class Product:
 
     @classmethod
     def reader_from_csv(cls):
-        with open("items.csv") as file:
-            reader = csv.DictReader(file)
-            for i in reader:
-                Product.products.append(i)
+        try:
+            with open("items.csv") as file:
+                reader = csv.DictReader(file)
+                for i in reader:
+                    if list(i.keys()) == ["name", "price", "quantity"]:
+                        Product.products.append(i)
+                    else:
+                        raise InstantiateCSVError
+        except FileNotFoundError:
+            print("FileNotFoundError: Отсутствует файл item.csv")
+        except InstantiateCSVError:
+            InstantiateCSVError.print_error()
 
     @property
     def name(self):
