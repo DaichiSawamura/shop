@@ -31,7 +31,7 @@ class Product:
         except FileNotFoundError:
             print("FileNotFoundError: Отсутствует файл item.csv")
         except InstantiateCSVError:
-            InstantiateCSVError.print_error()
+            print("Файл item.csv поврежден")
 
     @property
     def name(self):
